@@ -25,7 +25,7 @@ searchAgainBtn.addEventListener("click", () => {
   searchBox.classList.toggle("hide");
   weatherBox.classList.toggle("show");
   changeUnitBtn.textContent = "°C";
-  backimg.src = "../images/day.jpg";
+  backimg.src = "images/day.jpg";
 });
 
 searchBtn.addEventListener("click", fetchWeather);
@@ -48,9 +48,9 @@ async function fetchWeather() {
         console.log(data);
         const hour = new Date(data.dt * 1000 - data.timezone * 1000).getHours();
         if (hour > 17) {
-          backimg.src = "../images/night.jpg";
+          backimg.src = "images/night.jpg";
         } else if (hour <= 0 < 16) {
-          backimg.src = "../images/day.jpg";
+          backimg.src = "images/day.jpg";
         }
         const weatherInfo = {
           currentTempC: Math.round(parseFloat(data.main.temp) - 273.15) + "°C",
