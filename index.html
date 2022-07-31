@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="index.js" defer></script>
+    <title>Weather App</title>
+  </head>
+  <body>
+    <header>
+      <img src="../images/logo.png" alt="logo" />
+      <h1>Weather Now</h1>
+    </header>
+    <div class="loading">
+      <h1 id="loading-text">LOADING...</h1>
+      <div class="load-bg"></div>
+    </div>
+    <main>
+      <div class="city-search">
+        <h3>Enter a City Name:</h3>
+        <input type="text" name="city" id="city" placeholder="City Name" />
+        <button id="city-btn">Enter</button>
+      </div>
+      <div class="weather-box">
+        <h1 class="curr-temp"></h1>
+        <div class="line"></div>
+        <div class="sky-cond">
+          <h1 class="sky-condition"></h1>
+          <h3>Sky</h3>
+        </div>
+        <table>
+          <tr>
+            <th>Feels Like</th>
+            <th>Humidity</th>
+            <th>Pressure</th>
+            <th>Min Temp</th>
+            <th>Max Temp</th>
+            <th>Winds</th>
+          </tr>
+          <tr>
+            <td id="feels-like"></td>
+            <td id="humidity"></td>
+            <td id="pressure"></td>
+            <td id="min-temp"></td>
+            <td id="max-temp"></td>
+            <td id="winds"></td>
+          </tr>
+        </table>
+        <button class="switch-unit">°C</button>
+        <button class="search-again">search</button>
+      </div>
+      <img src="../images/day.jpg" alt="background" class="background" />
+    </main>
+  </body>
+</html>

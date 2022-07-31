@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:wght@300&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #404040;
+  padding: 4px;
+  box-shadow: 1px 1px 20px -5px;
+  z-index: 0;
+}
+header img {
+  width: 60px;
+}
+header h1 {
+  font-family: "Bebas Neue", cursive;
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 5px;
+  color: #f2f2f2;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+main {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Raleway", sans-serif;
+}
+main img {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main h1 {
+  font-size: 120px;
+  color: #404040;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main h3 {
+  font-size: 25px;
+}
+
+.weather-box {
+  background-color: #f2f2f2;
+  border-radius: 14px;
+  opacity: 0.8;
+  width: 800px;
+  height: 500px;
+  display: grid;
+  gap: 10px;
+  padding: 30px;
+  margin-top: 300px;
+  box-shadow: 1px 1px 20px -5px;
+  grid-template-columns: repeat(3, 1fr) 1px repeat(3, 1fr);
+  grid-template-rows: 1fr 150px 40px;
+  visibility: hidden;
+}
+.weather-box .curr-temp {
+  grid-column: 1/4;
+}
+.weather-box .sky-cond {
+  grid-column: 4/8;
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.weather-box .sky-cond h1 {
+  font-size: 50px;
+}
+.weather-box .line {
+  background-color: #a6a6a6;
+  height: 300px;
+  grid-column: 4;
+  grid-row: 1/2;
+}
+.weather-box table {
+  grid-column: 1/8;
+  text-align: center;
+  border-collapse: collapse;
+}
+.weather-box table th {
+  padding: 8px;
+  height: 30px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #404040;
+  border-bottom: 1px solid #a6a6a6;
+}
+.weather-box table td {
+  padding: 10px;
+  padding-top: 40px;
+  font-size: 24px;
+}
+.weather-box .switch-unit {
+  grid-column: 3/4;
+}
+.weather-box .search-again {
+  grid-column: 5/6;
+}
+.weather-box .switch-unit,
+.weather-box .search-again {
+  background-color: #404040;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  color: #f2f2f2;
+  cursor: pointer;
+}
+.weather-box .switch-unit:hover,
+.weather-box .search-again:hover {
+  background-color: #a6a6a6;
+}
+
+.city-search {
+  margin-top: 200px;
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  opacity: 0.8;
+  box-shadow: 1px 1px 20px -5px;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-radius: 14px;
+}
+.city-search input {
+  width: 200px;
+  height: 50px;
+  font-size: 25px;
+  outline: none;
+  border: none;
+  padding: 10px;
+  border-radius: 12px;
+  color: #404040;
+}
+.city-search button {
+  padding: 20px;
+  width: 120px;
+  font-size: 20px;
+  border: none;
+  background-color: #a6a6a6;
+  color: #f2f2f2;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.city-search button:hover {
+  background-color: #404040;
+}
+
+.load-bg {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+  background-color: black;
+  opacity: 0.7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loading-text {
+  position: absolute;
+  z-index: 2;
+  color: #f2f2f2;
+  left: 38%;
+  top: 45%;
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.loading {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+}
+
+.hide {
+  visibility: hidden;
+}/*# sourceMappingURL=styles.css.map */
