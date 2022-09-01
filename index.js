@@ -54,19 +54,19 @@ async function fetchWeather() {
         }
         const weatherInfo = {
           currentTempC: Math.round(parseFloat(data.main.temp) - 273.15) + "°C",
-          currentTempF:Math.round(parseFloat(data.main.temp) - 273.15) * 1.8 + 32 + "°F",
+          currentTempF:(Math.round(parseFloat(data.main.temp) - 273.15) * 1.8 + 32).toFixed() + "°F",
       
           tempLikeC: Math.round(parseFloat(data.main.feels_like) - 273.15) + "°C",
-          tempLikeF: Math.round(parseFloat(data.main.feels_like) - 273.15) * 1.8 + 32 + "°F",
+          tempLikeF: (Math.round(parseFloat(data.main.feels_like) - 273.15) * 1.8 + 32).toFixed() + "°F",
       
           humidityPrec: data.main.humidity + " %",
           pressureMb: data.main.pressure + " mb",
       
           temp_maxC: Math.round(parseFloat(data.main.temp_max) - 273.15) + "°C",
-          temp_maxF: Math.round(parseFloat(data.main.temp_max) - 273.15) + "°F",
+          temp_maxF: (Math.round(parseFloat(data.main.temp_max) - 273.15)).toFixed() + "°F",
       
           temp_minC: Math.round(parseFloat(data.main.temp_min) - 273.15) + "°C",
-          temp_minF: Math.round(parseFloat(data.main.temp_min) - 273.15) + "°F",
+          temp_minF: (Math.round(parseFloat(data.main.temp_min) - 273.15)).toFixed() + "°F",
           sky: data.weather["0"].description,
           wind: data.wind.speed + "m/s",
         };
